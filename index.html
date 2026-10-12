@@ -469,6 +469,13 @@
             align-items: center;
             gap: 8px;
             box-shadow: 0 4px 10px rgba(139, 92, 246, 0.1);
+            cursor: pointer;
+        }
+        
+        .vocab-badge.clicked-blue {
+            background: var(--blue-main) !important;
+            color: white !important;
+            border-color: var(--blue-main) !important;
         }
 
         /* MCQ Options */
@@ -529,22 +536,6 @@
         @keyframes popupBounce {
             from { transform: scale(0.6); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
-        }
-
-        /* Lesson Pages Container */
-        .lesson-pages-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .lesson-page-img {
-            width: 100%;
-            border-radius: 15px;
-            border: 2px solid #E2E8F0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            cursor: pointer;
         }
 
         /* Audio Player Styling */
@@ -758,7 +749,7 @@
                 </button>
             </div>
 
-            <!-- STAGE 1: NATIONAL INTRODUCTION (3 Mins) - Reordered -->
+            <!-- STAGE 1: NATIONAL INTRODUCTION (3 Mins) -->
             <div class="stage-card active" id="stage-0">
                 <div class="stage-header">
                     <h3><i class="fa-solid fa-flag" style="color:var(--green-success)"></i> Stage 1: National Introduction & Appreciation (3 Minutes)</h3>
@@ -770,14 +761,14 @@
                 </div>
 
                 <div style="display:flex; flex-direction:column; gap:15px; text-align:center;">
-                    <!-- 1. علم المملكة -->
+                    <!-- التعديل هنا: استبدال رمز العلم بـ * -->
                     <div style="display:flex; justify-content:center; align-items:center;">
                         <div style="background:#006C35; color:white; padding:15px 30px; border-radius:12px; font-weight:900; font-size:1.4rem; box-shadow:0 4px 15px rgba(0,108,53,0.3); border:2px solid #FFD166; display:inline-block;">
-                            🇸🇦 Kingdom of Saudi Arabia 🇸🇦
+                            * Kingdom of Saudi Arabia *
                         </div>
                     </div>
 
-                    <!-- 2. الآية ودعاء القيادة -->
+                    <!-- الآية ودعاء القيادة -->
                     <div style="background:#F0FDF4; border:2px solid #10B981; border-radius:12px; padding:15px;">
                         <p style="font-size:1.3rem; font-weight:bold; color:#047857; direction:rtl;">
                             ( رَبِّ اجْعَلْ هَٰذَا بَلَدًا آمِنًا )
@@ -790,7 +781,7 @@
                         </p>
                     </div>
 
-                    <!-- 3. رابط النشيد الوطني -->
+                    <!-- رابط النشيد الوطني -->
                     <div>
                         <h4 style="margin-bottom:8px; color:var(--green-success);"><i class="fa-solid fa-music"></i> National Anthem (English)</h4>
                         <div class="video-responsive-container">
@@ -798,7 +789,7 @@
                         </div>
                     </div>
 
-                    <!-- 4. رابط الأنشودة الترحيبية -->
+                    <!-- رابط الأنشودة الترحيبية -->
                     <div>
                         <h4 style="margin-bottom:8px; color:var(--purple-main);"><i class="fa-solid fa-child"></i> Welcome Song</h4>
                         <div class="video-responsive-container">
@@ -808,7 +799,7 @@
                 </div>
             </div>
 
-            <!-- STAGE 2: OBJECTIVES & VALUES (4 Mins) - Images Side by Side -->
+            <!-- STAGE 2: OBJECTIVES & VALUES (4 Mins) - التعديل: تكبير الصور ووضعها تحت بعض -->
             <div class="stage-card" id="stage-1">
                 <div class="stage-header">
                     <h3><i class="fa-solid fa-bullseye" style="color:var(--purple-main)"></i> Stage 2: Objectives & Core Values (4 Minutes)</h3>
@@ -819,18 +810,16 @@
                     </div>
                 </div>
 
-                <div style="display:flex; flex-direction:column; gap:15px;">
-                    <!-- الصور pic1 و pic2 جنب بعض بالترتيب -->
-                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;">
-                        <div style="border-radius:16px; overflow:hidden; border:2px solid #E2E8F0; box-shadow:0 4px 15px rgba(0,0,0,0.05);">
-                            <img src="pic1.png" alt="Unit 3 - Interests" style="width:100%; height:auto; display:block;">
-                        </div>
-                        <div style="border-radius:16px; overflow:hidden; border:2px solid #E2E8F0; box-shadow:0 4px 15px rgba(0,0,0,0.05);">
-                            <img src="pic2.png" alt="Lesson Objectives" style="width:100%; height:auto; display:block;">
-                        </div>
+                <div style="display:flex; flex-direction:column; gap:20px; align-items:center;">
+                    <!-- الصور pic1 و pic2 تحت بعض وبحجم كبير وواضح -->
+                    <div style="width: 100%; max-width: 750px; border-radius:16px; overflow:hidden; border:2px solid #E2E8F0; box-shadow:0 6px 20px rgba(0,0,0,0.08);">
+                        <img src="pic1.png" alt="Unit 3 - Interests" style="width:100%; height:auto; display:block;">
+                    </div>
+                    <div style="width: 100%; max-width: 750px; border-radius:16px; overflow:hidden; border:2px solid #E2E8F0; box-shadow:0 6px 20px rgba(0,0,0,0.08);">
+                        <img src="pic2.png" alt="Lesson Objectives" style="width:100%; height:auto; display:block;">
                     </div>
 
-                    <div style="background:#F8FAFC; padding:12px; border-radius:10px; border:1px solid #CBD5E1;">
+                    <div style="background:#F8FAFC; padding:15px; border-radius:10px; border:1px solid #CBD5E1; width: 100%; max-width: 750px;">
                         <p><b>⚡ Value Activation Task:</b> Which group is the first to share their work cooperatively?</p>
                         <div style="display:flex; gap:10px; margin-top:8px; flex-wrap:wrap;">
                             <button style="background:var(--green-success); color:white; border:none; padding:8px 15px; border-radius:8px; font-weight:bold; cursor:pointer;" onclick="awardValueScore(0)">Award Butterflies 🦋</button>
@@ -867,7 +856,7 @@
                 </div>
             </div>
 
-            <!-- STAGE 4: VOCABULARY & LESSON PAGES (15 Mins) - Reordered as requested -->
+            <!-- STAGE 4: VOCABULARY & LESSON PAGES (15 Mins) - التعديل: صوت 1 ثم صفحة 34 كبيرة ثم صوت 2 ثم صفحة 35 كبيرة ثم الكلمات مع تفاعل اللون الأزرق -->
             <div class="stage-card" id="stage-3">
                 <div class="stage-header">
                     <h3><i class="fa-solid fa-book-open" style="color:var(--blue-main)"></i> Stage 4: Lesson Pages & Vocabulary (15 Minutes)</h3>
@@ -885,9 +874,10 @@
                     <p style="font-size:0.9rem; color:#4C1D95;">This area is reserved for the AI-generated video (will be linked via GitHub).</p>
                 </div>
 
-                <!-- الترتيب المطلوب: صوت 1 ثم الصور ثم صوت 2 ثم الكلمات -->
-                <div style="display:flex; flex-direction:column; gap:15px; margin-bottom:20px;">
-                    <!-- صوت 1 (voice1.m4a) -->
+                <!-- الترتيب الدقيق المطلوب لـ ستيج 4 -->
+                <div style="display:flex; flex-direction:column; gap:20px; margin-bottom:25px;">
+                    
+                    <!-- 1. صوت 1 -->
                     <div>
                         <p style="font-weight:bold; font-size:0.95rem; margin-bottom:4px;">🔊 Audio Clip 1 (voice1.m4a):</p>
                         <div class="audio-player-box">
@@ -896,19 +886,15 @@
                         </div>
                     </div>
 
-                    <!-- الصور (Page 34 & Page 35) -->
-                    <div class="lesson-pages-container">
-                        <div>
-                            <h4 style="margin-bottom:6px; text-align:center;">📖 Page 34</h4>
-                            <img src="page1.png" alt="Page 34" class="lesson-page-img" onclick="openModal('📖 Page 34', '<img src=\'page1.png\' style=\'width:100%; border-radius:10px;\'>')">
-                        </div>
-                        <div>
-                            <h4 style="margin-bottom:6px; text-align:center;">📖 Page 35</h4>
-                            <img src="page2.png" alt="Page 35" class="lesson-page-img" onclick="openModal('📖 Page 35', '<img src=\'page2.png\' style=\'width:100%; border-radius:10px;\'>')">
+                    <!-- 2. صورة page 34 وكبرها -->
+                    <div style="text-align: center;">
+                        <h4 style="margin-bottom:8px; color:var(--purple-main);">📖 Page 34</h4>
+                        <div style="max-width: 650px; margin: 0 auto; border-radius:15px; overflow:hidden; border:2px solid #E2E8F0; box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                            <img src="page1.png" alt="Page 34" style="width:100%; display:block; cursor:pointer;" onclick="openModal('📖 Page 34', '<img src=\'page1.png\' style=\'width:100%; border-radius:10px;\'>')">
                         </div>
                     </div>
 
-                    <!-- صوت 2 (voice2.m4a) -->
+                    <!-- 3. صوت 2 -->
                     <div>
                         <p style="font-weight:bold; font-size:0.95rem; margin-bottom:4px;">🔊 Audio Clip 2 (voice2.m4a):</p>
                         <div class="audio-player-box">
@@ -916,29 +902,37 @@
                             <audio controls src="voice2.m4a"></audio>
                         </div>
                     </div>
+
+                    <!-- 4. صورة page 35 وكبرها -->
+                    <div style="text-align: center;">
+                        <h4 style="margin-bottom:8px; color:var(--purple-main);">📖 Page 35</h4>
+                        <div style="max-width: 650px; margin: 0 auto; border-radius:15px; overflow:hidden; border:2px solid #E2E8F0; box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                            <img src="page2.png" alt="Page 35" style="width:100%; display:block; cursor:pointer;" onclick="openModal('📖 Page 35', '<img src=\'page2.png\' style=\'width:100%; border-radius:10px;\'>')">
+                        </div>
+                    </div>
                 </div>
 
-                <!-- الكلمات المستهدفة مرتبة بالترتيب المطلوب بدقة -->
-                <h4 style="margin-bottom:10px; color:var(--purple-main);"><i class="fa-solid fa-spell-check"></i> Target Vocabulary:</h4>
+                <!-- 5. الكلمات .. وكل كلمة اضغط عليها يتغير لونها للون الازرق -->
+                <h4 style="margin-bottom:10px; color:var(--purple-main);"><i class="fa-solid fa-spell-check"></i> Target Vocabulary (Click any word to turn blue):</h4>
                 <div class="vocab-grid">
-                    <span class="vocab-badge">Board</span>
-                    <span class="vocab-badge">Classical</span>
-                    <span class="vocab-badge">Concert</span>
-                    <span class="vocab-badge">Drum</span>
-                    <span class="vocab-badge">Festival</span>
-                    <span class="vocab-badge">Instrument</span>
-                    <span class="vocab-badge">Invitation</span>
-                    <span class="vocab-badge">Jazz</span>
-                    <span class="vocab-badge">Member</span>
-                    <span class="vocab-badge">Classes Online</span>
-                    <span class="vocab-badge">Oud</span>
-                    <span class="vocab-badge">Prize</span>
-                    <span class="vocab-badge">Traditional</span>
-                    <span class="vocab-badge">Violin</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Board</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Classical</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Concert</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Drum</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Festival</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Instrument</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Invitation</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Jazz</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Member</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Classes Online</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Oud</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Prize</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Traditional</span>
+                    <span class="vocab-badge" onclick="toggleWordColor(this)">Violin</span>
                 </div>
             </div>
 
-            <!-- STAGE 5: MUSIC FESTIVAL MYSTERY (5 Mins) - Without audio clips -->
+            <!-- STAGE 5: MUSIC FESTIVAL MYSTERY (5 Mins) -->
             <div class="stage-card" id="stage-4">
                 <div class="stage-header">
                     <h3><i class="fa-solid fa-masks-theater" style="color:var(--green-success)"></i> Stage 5: Music Festival Mystery (5 Minutes)</h3>
@@ -1081,23 +1075,27 @@
                 </div>
             </div>
 
-            <!-- STAGE 10: EXIT TICKET & MIME STRATEGY (2 Mins) -->
+            <!-- STAGE 10: EXIT TICKET & MIME STRATEGY (2 Mins) - حل مشكلة اسم الملف وتوفير مسار بديل أو رسالة واضحة في حال لم تتوفر الصورة -->
             <div class="stage-card" id="stage-9">
                 <div class="stage-header">
-                    <h3><i class="fa-solid fa-ticket" style="color:var(--yellow-accent)"></i> Stage 10: exit ticket (mime strategy) (2 Minutes)</h3>
+                    <h3><i class="fa-solid fa-ticket" style="color:var(--yellow-accent)"></i> Stage 10: Exit Ticket (Mime Strategy) (2 Minutes)</h3>
                     <div class="stage-timer-box">
                         <i class="fa-solid fa-clock"></i> <span id="timer9">02:00</span>
                         <button class="timer-btn" onclick="toggleStageTimer(9)"><i class="fa-solid fa-play" id="pIcon9"></i></button>
-                        <button class="timer-btn" onclick="resetStageTimer(9)"><i class="fa-solid fa-rotate-left"></i></button>
+                        <button class="timer9-btn" onclick="resetStageTimer(9)"><i class="fa-solid fa-rotate-left"></i></button>
                     </div>
                 </div>
 
                 <div style="display:flex; flex-direction:column; gap:15px; align-items:center;">
-                    <p style="font-weight:bold; font-size:1.2rem; color:var(--purple-main);">exit ticket (mime strategy)</p>
+                    <p style="font-weight:bold; font-size:1.2rem; color:var(--purple-main);">Exit Ticket (Mime Strategy)</p>
 
-                    <!-- بطاقة فارغة واحدة exit ticket.png -->
-                    <div style="max-width:450px; width:100%;">
-                        <img src="exit ticket.png" alt="Exit Ticket" style="width:100%; border-radius:12px; border:2px solid #CBD5E1; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+                    <!-- صورة بطاقة الخروج مع معالجة الخطأ في حال لم يتم العثور على الملف (صورة مكسورة) عبر دالة onerror -->
+                    <div style="max-width:450px; width:100%; text-align:center;">
+                        <img src="exit ticket.png" alt="Exit Ticket" style="width:100%; border-radius:12px; border:2px solid #CBD5E1; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onerror="this.style.display='none'; document.getElementById('exitTicketFallback').style.display='block';">
+                        <div id="exitTicketFallback" style="display:none; background:#FEF3C7; border:2px dashed #D97706; padding:20px; border-radius:12px; color:#B45309;">
+                            <i class="fa-solid fa-triangle-exclamation fa-2x" style="margin-bottom:8px;"></i>
+                            <p><b>Note:</b> The image file `exit ticket.png` was not found in the directory. Please make sure the image is uploaded with this exact name, or use the mime strategy activity directly with students!</p>
+                        </div>
                     </div>
 
                     <button style="background:linear-gradient(135deg, #EC4899, #8B5CF6); color:white; border:none; padding:15px 30px; border-radius:50px; font-weight:bold; font-size:1.1rem; cursor:pointer; margin-top:10px; width:100%; max-width:400px;" onclick="showWinningModal()">
@@ -1240,6 +1238,12 @@
             window.state.currentStage = idx;
             window.renderUIFromState();
             saveStateToStorage();
+            playAudioEffect('happy');
+        };
+
+        // دالة تغيير لون الكلمة إلى الأزرق عند الضغط عليها في ستيج 4
+        window.toggleWordColor = function(element) {
+            element.classList.toggle('clicked-blue');
             playAudioEffect('happy');
         };
 
