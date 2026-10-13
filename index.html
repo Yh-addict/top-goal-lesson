@@ -418,7 +418,8 @@
             margin-top: 10px;
         }
 
-        .video-responsive-container iframe {
+        .video-responsive-container iframe,
+        .video-responsive-container video {
             position: absolute;
             top: 0;
             left: 0;
@@ -600,14 +601,13 @@
             <div class="school-info">
                 <span class="badge-pill"><i class="fa-solid fa-school"></i> Al-Hisha Elementary School</span>
                 <span class="badge-pill"><i class="fa-solid fa-chalkboard-user"></i> Teacher: Ms. Manal Al-Maawi</span>
-                <span class="badge-pill"><i class="fa-solid fa-user-tie"></i> Principal: Ms. Ghala Al-Jadran</span>
                 <span class="badge-pill" style="background:#F59E0B; color:white;"><i class="fa-solid fa-book"></i> Subject: Top Goal 3</span>
                 <span class="badge-pill" style="background:#10B981; color:white;"><i class="fa-solid fa-music"></i> Lesson: Unit 3 - Interests</span>
                 <span class="sync-badge" id="syncStatus"><i class="fa-solid fa-check"></i> Thursday, Jumada I 4, 1448 AH</span>
             </div>
             <div class="master-timer-box">
                 <i class="fa-solid fa-stopwatch"></i>
-                <span id="masterTimer">45:00</span>
+                <span id="masterTimer">44:00</span>
                 <button class="timer-btn" onclick="toggleMasterTimer()"><i class="fa-solid fa-play" id="masterPlayIcon"></i></button>
                 <button class="timer-btn" onclick="resetMasterTimer()"><i class="fa-solid fa-rotate-left"></i></button>
             </div>
@@ -763,20 +763,20 @@
                 <div style="display:flex; flex-direction:column; gap:15px; text-align:center;">
                     <div style="display:flex; justify-content:center; align-items:center;">
                         <div style="background:#006C35; color:white; padding:15px 30px; border-radius:12px; font-weight:900; font-size:1.4rem; box-shadow:0 4px 15px rgba(0,108,53,0.3); border:2px solid #FFD166; display:inline-block;">
-                            * Kingdom of Saudi Arabia *
+                            🇸🇦 Kingdom of Saudi Arabia 🇸🇦
                         </div>
                     </div>
 
-                    <!-- الآية ودعاء القيادة -->
+                    <!-- الآية ودعاء القيادة (بالعربية) -->
                     <div style="background:#F0FDF4; border:2px solid #10B981; border-radius:12px; padding:15px;">
                         <p style="font-size:1.3rem; font-weight:bold; color:#047857; direction:rtl;">
                             ( رَبِّ اجْعَلْ هَٰذَا بَلَدًا آمِنًا )
                         </p>
                     </div>
 
-                    <div style="background:#F8FAFC; border:1px solid #CBD5E1; border-radius:12px; padding:15px; text-align:left; line-height:1.8;">
-                        <p style="font-size:1.05rem; color:var(--dark-text);">
-                            "O Allah, protect our beloved homeland, the Kingdom of Saudi Arabia, from all evil and harm. Protect our leader and Imam, the Custodian of the Two Holy Mosques, King Salman bin Abdulaziz Al Saud, may Allah protect him, and his trustworthy Crown Prince, His Royal Highness Prince Mohammed bin Salman bin Abdulaziz Al Saud, may Allah protect them. Support them with victory and empowerment, and honor Islam and Muslims through them."
+                    <div style="background:#F8FAFC; border:1px solid #CBD5E1; border-radius:12px; padding:15px; text-align:right; direction:rtl; line-height:2;">
+                        <p style="font-size:1.1rem; color:var(--dark-text);">
+                            اللهم احفظ وطننا الغالي المملكة العربية السعودية من كل سوء ومكروه ، واحفظ لنا قائدنا وإمامنا خادم الحرمين الشريفين الملك سلمان بن عبدالعزيز آل سعود حفظه الله .. وولي عهده الأمين صاحب السمو الملكي الأمير محمد بن سلمان بن عبدالعزيز آل سعود حفظه الله ، وأيدهم بالنصر والتمكين وأعزهم بالإسلام .. وأعز بهم الإسلام والمسلمين.
                         </p>
                     </div>
 
@@ -854,7 +854,7 @@
                 </div>
             </div>
 
-            <!-- STAGE 4: VOCABULARY & LESSON PAGES (15 Mins) -->
+            <!-- STAGE 4: VOCABULARY & LESSON PAGES (15 Mins) - With conversation.mp4 -->
             <div class="stage-card" id="stage-3">
                 <div class="stage-header">
                     <h3><i class="fa-solid fa-book-open" style="color:var(--blue-main)"></i> Stage 4: Lesson Pages & Vocabulary (15 Minutes)</h3>
@@ -865,15 +865,15 @@
                     </div>
                 </div>
 
-                <!-- مساحة مخصصة لفيديو الذكاء الاصطناعي -->
-                <div style="background:#F3E8FF; border:2px dashed #8B5CF6; border-radius:16px; padding:20px; text-align:center; margin-bottom:15px;">
-                    <i class="fa-solid fa-wand-magic-sparkles fa-2x" style="color:#8B5CF6; margin-bottom:8px;"></i>
-                    <h4 style="color:#6D28D9;">AI Video Placeholder</h4>
-                    <p style="font-size:0.9rem; color:#4C1D95;">This area is reserved for the AI-generated video (will be linked via GitHub).</p>
+                <!-- إضافة فيديو conversation.mp4 في موقعه المخصص -->
+                <div style="margin-bottom: 20px;">
+                    <h4 style="margin-bottom: 8px; color:var(--purple-main);"><i class="fa-solid fa-video"></i> Conversation Video (conversation.mp4)</h4>
+                    <div class="video-responsive-container">
+                        <video controls src="conversation.mp4" preload="metadata"></video>
+                    </div>
                 </div>
 
                 <div style="display:flex; flex-direction:column; gap:20px; margin-bottom:25px;">
-                    
                     <!-- 1. صوت 1 -->
                     <div>
                         <p style="font-weight:bold; font-size:0.95rem; margin-bottom:4px;">🔊 Audio Clip 1 (voice1.m4a):</p>
@@ -909,10 +909,9 @@
                     </div>
                 </div>
 
-                <!-- 5. الكلمات -->
+                <!-- 5. الكلمات (بدون Board وبدون Classes Online) -->
                 <h4 style="margin-bottom:10px; color:var(--purple-main);"><i class="fa-solid fa-spell-check"></i> Target Vocabulary (Click any word to turn blue):</h4>
                 <div class="vocab-grid">
-                    <span class="vocab-badge" onclick="toggleWordColor(this)">Board</span>
                     <span class="vocab-badge" onclick="toggleWordColor(this)">Classical</span>
                     <span class="vocab-badge" onclick="toggleWordColor(this)">Concert</span>
                     <span class="vocab-badge" onclick="toggleWordColor(this)">Drum</span>
@@ -921,7 +920,6 @@
                     <span class="vocab-badge" onclick="toggleWordColor(this)">Invitation</span>
                     <span class="vocab-badge" onclick="toggleWordColor(this)">Jazz</span>
                     <span class="vocab-badge" onclick="toggleWordColor(this)">Member</span>
-                    <span class="vocab-badge" onclick="toggleWordColor(this)">Classes Online</span>
                     <span class="vocab-badge" onclick="toggleWordColor(this)">Oud</span>
                     <span class="vocab-badge" onclick="toggleWordColor(this)">Prize</span>
                     <span class="vocab-badge" onclick="toggleWordColor(this)">Traditional</span>
@@ -1075,25 +1073,20 @@
             <!-- STAGE 10: EXIT TICKET & MIME STRATEGY (2 Mins) -->
             <div class="stage-card" id="stage-9">
                 <div class="stage-header">
-                    <h3><i class="fa-solid fa-ticket" style="color:var(--yellow-accent)"></i> Stage 10: Exit Ticket (Mime Strategy) (2 Minutes)</h3>
+                    <h3><i class="fa-solid fa-ticket" style="color:var(--yellow-accent)"></i> Stage 10: exit ticket (mime strategy) (2 Minutes)</h3>
                     <div class="stage-timer-box">
                         <i class="fa-solid fa-clock"></i> <span id="timer9">02:00</span>
                         <button class="timer-btn" onclick="toggleStageTimer(9)"><i class="fa-solid fa-play" id="pIcon9"></i></button>
-                        <!-- تم تعديل كلاس الزر هنا وأيقونة إعادة الضبط لتتطابق تمامًا مع بقية المراحل -->
                         <button class="timer-btn" onclick="resetStageTimer(9)"><i class="fa-solid fa-rotate-left"></i></button>
                     </div>
                 </div>
 
                 <div style="display:flex; flex-direction:column; gap:15px; align-items:center;">
-                    <p style="font-weight:bold; font-size:1.2rem; color:var(--purple-main);">Exit Ticket (Mime Strategy)</p>
+                    <p style="font-weight:bold; font-size:1.2rem; color:var(--purple-main);">exit ticket (mime strategy)</p>
 
-                    <!-- تم تكبير الصورة هنا بنسبة أكبر لتتناسب تمامًا مع مساحة العرض (max-width: 700px) -->
-                    <div style="max-width:700px; width:100%; text-align:center;">
-                        <img src="exit ticket.png" alt="Exit Ticket" style="width:100%; border-radius:16px; border:2px solid #CBD5E1; box-shadow:0 6px 18px rgba(0,0,0,0.06);" onerror="this.style.display='none'; document.getElementById('exitTicketFallback').style.display='block';">
-                        <div id="exitTicketFallback" style="display:none; background:#FEF3C7; border:2px dashed #D97706; padding:20px; border-radius:12px; color:#B45309;">
-                            <i class="fa-solid fa-triangle-exclamation fa-2x" style="margin-bottom:8px;"></i>
-                            <p><b>Note:</b> The image file `exit ticket.png` was not found in the directory. Please make sure the image is uploaded with this exact name, or use the mime strategy activity directly with students!</p>
-                        </div>
+                    <!-- بطاقة فارغة واحدة exit ticket.png -->
+                    <div style="max-width:450px; width:100%;">
+                        <img src="exit ticket.png" alt="Exit Ticket" style="width:100%; border-radius:12px; border:2px solid #CBD5E1; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
                     </div>
 
                     <button style="background:linear-gradient(135deg, #EC4899, #8B5CF6); color:white; border:none; padding:15px 30px; border-radius:50px; font-weight:bold; font-size:1.1rem; cursor:pointer; margin-top:10px; width:100%; max-width:400px;" onclick="showWinningModal()">
