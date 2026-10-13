@@ -450,11 +450,11 @@
             pointer-events: none;
         }
 
-        /* Vocabulary Cards Grid Style */
+        /* Vocabulary Cards Grid Style (كبرنا حجم الخط والبطاقات قليلاً) */
         .vocab-cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+            gap: 14px;
             margin: 15px 0;
         }
 
@@ -462,10 +462,15 @@
             background: var(--purple-light);
             border: 2px solid var(--purple-main);
             border-radius: 14px;
-            padding: 12px;
+            padding: 14px;
             text-align: center;
             cursor: pointer;
             box-shadow: 0 4px 10px rgba(139, 92, 246, 0.1);
+        }
+
+        .vocab-card-item div {
+            font-size: 1.15rem !important;
+            font-weight: 800 !important;
         }
 
         .vocab-card-item.card-clicked-blue {
@@ -849,7 +854,7 @@
                 </div>
             </div>
 
-            <!-- STAGE 4: VOCABULARY & LESSON PAGES (15 Mins) - With Uploaded Images -->
+            <!-- STAGE 4: VOCABULARY & LESSON PAGES (15 Mins) -خط أكبر ومحدد -->
             <div class="stage-card" id="stage-3">
                 <div class="stage-header">
                     <h3><i class="fa-solid fa-book-open" style="color:var(--blue-main)"></i> Stage 4: Lesson Pages & Vocabulary (15 Minutes)</h3>
@@ -899,80 +904,68 @@
                     </div>
                 </div>
 
-                <!-- شبكة بطاقات المفردات المحدثة بالصور التي رفعتها -->
-                <h4 style="margin-bottom:10px; color:var(--purple-main);"><i class="fa-solid fa-spell-check"></i> Target Vocabulary (Click any card to select):</h4>
+                <!-- شبكة بطاقات المفردات (خط أكبر) -->
+                <h4 style="margin-bottom:10px; color:var(--purple-main); font-size: 1.1rem;"><i class="fa-solid fa-spell-check"></i> Target Vocabulary (Click any card to select):</h4>
                 
                 <div class="vocab-cards-grid">
-                    <!-- Classical -->
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
                         <img src="classical.png" alt="Classical" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
-                        <div style="font-weight:bold; color:var(--purple-main); font-size:1rem;">Classical</div>
+                        <div>Classical</div>
                     </div>
 
-                    <!-- Concert -->
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
                         <img src="concert.png" alt="Concert" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
-                        <div style="font-weight:bold; color:var(--purple-main); font-size:1rem;">Concert</div>
+                        <div>Concert</div>
                     </div>
 
-                    <!-- Drum -->
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
                         <img src="drum.png" alt="Drum" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
-                        <div style="font-weight:bold; color:var(--purple-main); font-size:1rem;">Drum</div>
+                        <div>Drum</div>
                     </div>
 
-                    <!-- Festival -->
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
                         <img src="festival.png" alt="Festival" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
-                        <div style="font-weight:bold; color:var(--purple-main); font-size:1rem;">Festival</div>
+                        <div>Festival</div>
                     </div>
 
-                    <!-- Instrument -->
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
                         <img src="instrument.png" alt="Instrument" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
-                        <div style="font-weight:bold; color:var(--purple-main); font-size:1rem;">Instrument</div>
+                        <div>Instrument</div>
                     </div>
 
-                    <!-- Invitation -->
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
                         <img src="invitation.png" alt="Invitation" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
-                        <div style="font-weight:bold; color:var(--purple-main); font-size:1rem;">Invitation</div>
+                        <div>Invitation</div>
                     </div>
 
-                    <!-- Jazz -->
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
                         <img src="jazz.png" alt="Jazz" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
-                        <div style="font-weight:bold; color:var(--purple-main); font-size:1rem;">Jazz</div>
+                        <div>Jazz</div>
                     </div>
 
-                    <!-- Member -->
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
                         <img src="member.png" alt="Member" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
-                        <div style="font-weight:bold; color:var(--purple-main); font-size:1rem;">Member</div>
+                        <div>Member</div>
                     </div>
 
-                    <!-- Oud -->
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
                         <img src="oud.png" alt="Oud" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
-                        <div style="font-weight:bold; color:var(--purple-main); font-size:1rem;">Oud</div>
+                        <div>Oud</div>
                     </div>
 
-                    <!-- Prize -->
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
                         <img src="prize.png" alt="Prize" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
-                        <div style="font-weight:bold; color:var(--purple-main); font-size:1rem;">Prize</div>
+                        <div>Prize</div>
                     </div>
 
-                    <!-- Traditional -->
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
                         <img src="traditional.png" alt="Traditional" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
-                        <div style="font-weight:bold; color:var(--purple-main); font-size:1rem;">Traditional</div>
+                        <div>Traditional</div>
                     </div>
 
-                    <!-- Violin -->
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
                         <img src="violin.png" alt="Violin" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
-                        <div style="font-weight:bold; color:var(--purple-main); font-size:1rem;">Violin</div>
+                        <div>Violin</div>
                     </div>
                 </div>
             </div>
@@ -1078,10 +1071,10 @@
                 </div>
             </div>
 
-            <!-- STAGE 9: CROSS-CURRICULAR CONNECTIONS (4 Mins) -->
+            <!-- STAGE 9: CROSS-CURRICULAR CONNECTIONS (4 Mins) - باللغة العربية -->
             <div class="stage-card" id="stage-8">
                 <div class="stage-header">
-                    <h3><i class="fa-solid fa-network-wired" style="color:var(--purple-main)"></i> Stage 9: Cross-Curricular Connections (4 Minutes)</h3>
+                    <h3><i class="fa-solid fa-network-wired" style="color:var(--purple-main)"></i> المرحلة 9: التكامل بين المواد الدراسية (4 دقائق)</h3>
                     <div class="stage-timer-box">
                         <i class="fa-solid fa-clock"></i> <span id="timer8">04:00</span>
                         <button class="timer-btn" onclick="toggleStageTimer(8)"><i class="fa-solid fa-play" id="pIcon8"></i></button>
@@ -1089,22 +1082,22 @@
                     </div>
                 </div>
 
-                <p style="margin-bottom:12px;">Click on any subject to explore its connection with our English lesson:</p>
+                <p style="margin-bottom:12px; text-align:right; direction:rtl;">انقر على أي مادة لاستكشاف ارتباطها بدرس اللغة الإنجليزية:</p>
 
-                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:15px;">
-                    <div style="background:#EFF6FF; border:2px solid #3B82F6; border-radius:12px; padding:20px; text-align:center; cursor:pointer;" onclick="openModal('📐 Mathematics Connection', '<div style=\'font-size:3rem; margin-bottom:10px;\'>🔢</div><p style=\'font-size:1.1rem; line-height:1.6;\'>Counting musical instruments (e.g., counting 3 drums and 2 violins) and calculating total group points and scores.</p>')">
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:15px; direction:rtl;">
+                    <div style="background:#EFF6FF; border:2px solid #3B82F6; border-radius:12px; padding:20px; text-align:center; cursor:pointer;" onclick="openModal('📐 ارتباط مادة الرياضيات', '<div style=\'font-size:3rem; margin-bottom:10px;\'>🔢</div><p style=\'font-size:1.1rem; line-height:1.6; text-align:right;\'>عد الآلات الموسيقية (مثل عد 3 طبولات و2 آلة كمان) وحساب مجموع نقاط ومكافآت المجموعات الكلية.</p>')">
                         <i class="fa-solid fa-calculator fa-2x" style="color:#1D4ED8; margin-bottom:8px;"></i>
-                        <h4 style="color:#1D4ED8; font-size:1.2rem;">Mathematics 📐</h4>
+                        <h4 style="color:#1D4ED8; font-size:1.2rem;">الرياضيات 📐</h4>
                     </div>
 
-                    <div style="background:#ECFDF5; border:2px solid #10B981; border-radius:12px; padding:20px; text-align:center; cursor:pointer;" onclick="openModal('🔬 Science Connection', '<div style=\'font-size:3rem; margin-bottom:10px;\'>🧪</div><p style=\'font-size:1.1rem; line-height:1.6;\'>Exploring how musical instruments produce sound waves and vibrations through strings and percussion instruments.</p>')">
+                    <div style="background:#ECFDF5; border:2px solid #10B981; border-radius:12px; padding:20px; text-align:center; cursor:pointer;" onclick="openModal('🔬 ارتباط مادة العلوم', '<div style=\'font-size:3rem; margin-bottom:10px;\'>🧪</div><p style=\'font-size:1.1rem; line-height:1.6; text-align:right;\'>استكشاف كيف تنتج الآلات الموسيقية الموجات الصوتية والاهتزازات عبر الأوتار والآلات الإيقاعية.</p>')">
                         <i class="fa-solid fa-atom fa-2x" style="color:#047857; margin-bottom:8px;"></i>
-                        <h4 style="color:#047857; font-size:1.2rem;">Science 🔬</h4>
+                        <h4 style="color:#047857; font-size:1.2rem;">العلوم 🔬</h4>
                     </div>
 
-                    <div style="background:#FEF3C7; border:2px solid #D97706; border-radius:12px; padding:20px; text-align:center; cursor:pointer;" onclick="openModal('🕌 Islamic Studies Connection', '<div style=\'font-size:3rem; margin-bottom:10px;\'>📖</div><p style=\'font-size:1.1rem; line-height:1.6;\'>Emphasizing good manners, cooperation, helping others, and using our talents and skills for the benefit of our community.</p>')">
+                    <div style="background:#FEF3C7; border:2px solid #D97706; border-radius:12px; padding:20px; text-align:center; cursor:pointer;" onclick="openModal('🕌 ارتباط الدراسات الإسلامية', '<div style=\'font-size:3rem; margin-bottom:10px;\'>📖</div><p style=\'font-size:1.1rem; line-height:1.6; text-align:right;\'>التأكيد على الآداب الحسنة، والتعاون، ومساعدة الآخرين، واستثمار المواهب والمهارات فيما يفع لخدمة المجتمع.</p>')">
                         <i class="fa-solid fa-mosque fa-2x" style="color:#B45309; margin-bottom:8px;"></i>
-                        <h4 style="color:#B45309; font-size:1.2rem;">Islamic Studies 🕌</h4>
+                        <h4 style="color:#B45309; font-size:1.2rem;">الدراسات الإسلامية 🕌</h4>
                     </div>
                 </div>
             </div>
@@ -1168,12 +1161,30 @@
             "Haya Bint Mohammed Al-Maawi", "Wad Masoud Al-Shahrani", "Wasan Mubarak Al-Shahrani"
         ];
 
+        // تحميل الحالة مع التأكد من بقاء الطالبات وتوزيعات المجموعات ثابتة
         const savedStateJson = localStorage.getItem('manalLessonState');
+        let initialAttendance = rawStudents.map(fullName => ({ fullName, present: true, group: null }));
+
+        if (savedStateJson) {
+            try {
+                const parsed = JSON.parse(savedStateJson);
+                if (parsed.attendance && Array.isArray(parsed.attendance)) {
+                    // دمج البيانات المحفوظة مع القائمة لضمان عدم ضياع التوزيع
+                    initialAttendance = rawStudents.map(fullName => {
+                        const found = parsed.attendance.find(s => s.fullName === fullName);
+                        return found ? found : { fullName, present: true, group: null };
+                    });
+                }
+            } catch(e) {}
+        }
+
         window.state = savedStateJson ? JSON.parse(savedStateJson) : {
             currentStage: 0,
             scores: [0, 0, 0],
-            attendance: rawStudents.map(fullName => ({ fullName, present: true, group: null }))
+            attendance: initialAttendance
         };
+        // تحديث الحضور بالمصفوفة الآمنة
+        window.state.attendance = initialAttendance;
 
         function saveStateToStorage() {
             localStorage.setItem('manalLessonState', JSON.stringify(window.state));
@@ -1268,7 +1279,6 @@
             playAudioEffect('happy');
         };
 
-        // دالة تلوين بطاقة المفردات عند النقر
         window.toggleCardColor = function(cardElement) {
             cardElement.classList.toggle('card-clicked-blue');
             playAudioEffect('happy');
@@ -1470,7 +1480,8 @@
 
             onValue(stateRef, (snapshot) => {
                 const data = snapshot.val();
-                if (data) {
+                if (data && data.attendance) {
+                    // دمج البيانات المستلمة من فايربيس لتثبيت الطالبات وعدم اختفائهن
                     window.state = data;
                     if (window.renderUIFromState) window.renderUIFromState();
                 }
