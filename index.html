@@ -450,27 +450,35 @@
             pointer-events: none;
         }
 
-        /* Vocabulary Cards Grid Style (كبرنا حجم الخط والبطاقات قليلاً) */
+        /* Vocabulary Cards Grid Style (خط أكبر بكثير وبطاقات أوسع) */
         .vocab-cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-            gap: 14px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
             margin: 15px 0;
         }
 
         .vocab-card-item {
             background: var(--purple-light);
-            border: 2px solid var(--purple-main);
-            border-radius: 14px;
-            padding: 14px;
+            border: 2.5px solid var(--purple-main);
+            border-radius: 16px;
+            padding: 16px;
             text-align: center;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(139, 92, 246, 0.1);
+            box-shadow: 0 6px 15px rgba(139, 92, 246, 0.15);
+        }
+
+        .vocab-card-item img {
+            width: 75px !important;
+            height: 75px !important;
+            object-fit: contain;
+            margin-bottom: 8px;
         }
 
         .vocab-card-item div {
-            font-size: 1.15rem !important;
-            font-weight: 800 !important;
+            font-size: 1.3rem !important;
+            font-weight: 900 !important;
+            color: #6D28D9;
         }
 
         .vocab-card-item.card-clicked-blue {
@@ -854,7 +862,7 @@
                 </div>
             </div>
 
-            <!-- STAGE 4: VOCABULARY & LESSON PAGES (15 Mins) -خط أكبر ومحدد -->
+            <!-- STAGE 4: VOCABULARY & LESSON PAGES (15 Mins) - بخط كبير جداً للمفردات -->
             <div class="stage-card" id="stage-3">
                 <div class="stage-header">
                     <h3><i class="fa-solid fa-book-open" style="color:var(--blue-main)"></i> Stage 4: Lesson Pages & Vocabulary (15 Minutes)</h3>
@@ -904,67 +912,67 @@
                     </div>
                 </div>
 
-                <!-- شبكة بطاقات المفردات (خط أكبر) -->
-                <h4 style="margin-bottom:10px; color:var(--purple-main); font-size: 1.1rem;"><i class="fa-solid fa-spell-check"></i> Target Vocabulary (Click any card to select):</h4>
+                <!-- شبكة بطاقات المفردات (تم تكبير الخط والصور لضمان وضوح تام) -->
+                <h4 style="margin-bottom:12px; color:var(--purple-main); font-size: 1.2rem;"><i class="fa-solid fa-spell-check"></i> Target Vocabulary (Click any card to select):</h4>
                 
                 <div class="vocab-cards-grid">
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
-                        <img src="classical.png" alt="Classical" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
+                        <img src="classical.png" alt="Classical">
                         <div>Classical</div>
                     </div>
 
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
-                        <img src="concert.png" alt="Concert" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
+                        <img src="concert.png" alt="Concert">
                         <div>Concert</div>
                     </div>
 
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
-                        <img src="drum.png" alt="Drum" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
+                        <img src="drum.png" alt="Drum">
                         <div>Drum</div>
                     </div>
 
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
-                        <img src="festival.png" alt="Festival" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
+                        <img src="festival.png" alt="Festival">
                         <div>Festival</div>
                     </div>
 
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
-                        <img src="instrument.png" alt="Instrument" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
+                        <img src="instrument.png" alt="Instrument">
                         <div>Instrument</div>
                     </div>
 
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
-                        <img src="invitation.png" alt="Invitation" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
+                        <img src="invitation.png" alt="Invitation">
                         <div>Invitation</div>
                     </div>
 
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
-                        <img src="jazz.png" alt="Jazz" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
+                        <img src="jazz.png" alt="Jazz">
                         <div>Jazz</div>
                     </div>
 
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
-                        <img src="member.png" alt="Member" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
+                        <img src="member.png" alt="Member">
                         <div>Member</div>
                     </div>
 
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
-                        <img src="oud.png" alt="Oud" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
+                        <img src="oud.png" alt="Oud">
                         <div>Oud</div>
                     </div>
 
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
-                        <img src="prize.png" alt="Prize" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
+                        <img src="prize.png" alt="Prize">
                         <div>Prize</div>
                     </div>
 
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
-                        <img src="traditional.png" alt="Traditional" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
+                        <img src="traditional.png" alt="Traditional">
                         <div>Traditional</div>
                     </div>
 
                     <div class="vocab-card-item" onclick="toggleCardColor(this)">
-                        <img src="violin.png" alt="Violin" style="width:60px; height:60px; object-fit:contain; margin-bottom:6px;">
+                        <img src="violin.png" alt="Violin">
                         <div>Violin</div>
                     </div>
                 </div>
@@ -1095,7 +1103,7 @@
                         <h4 style="color:#047857; font-size:1.2rem;">العلوم 🔬</h4>
                     </div>
 
-                    <div style="background:#FEF3C7; border:2px solid #D97706; border-radius:12px; padding:20px; text-align:center; cursor:pointer;" onclick="openModal('🕌 ارتباط الدراسات الإسلامية', '<div style=\'font-size:3rem; margin-bottom:10px;\'>📖</div><p style=\'font-size:1.1rem; line-height:1.6; text-align:right;\'>التأكيد على الآداب الحسنة، والتعاون، ومساعدة الآخرين، واستثمار المواهب والمهارات فيما يفع لخدمة المجتمع.</p>')">
+                    <div style="background:#FEF3C7; border:2px solid #D97706; border-radius:12px; padding:20px; text-align:center; cursor:pointer;" onclick="openModal('🕌 ارتباط الدراسات الإسلامية', '<div style=\'font-size:3rem; margin-bottom:10px;\'>📖</div><p style=\'font-size:1.1rem; line-height:1.6; text-align:right;\'>التأكيد على الآداب الحسنة، والتعاون، ومساعدة الآخرين، واستثمار المواهب والمهارات فيما ينفع لخدمة المجتمع.</p>')">
                         <i class="fa-solid fa-mosque fa-2x" style="color:#B45309; margin-bottom:8px;"></i>
                         <h4 style="color:#B45309; font-size:1.2rem;">الدراسات الإسلامية 🕌</h4>
                     </div>
@@ -1161,7 +1169,6 @@
             "Haya Bint Mohammed Al-Maawi", "Wad Masoud Al-Shahrani", "Wasan Mubarak Al-Shahrani"
         ];
 
-        // تحميل الحالة مع التأكد من بقاء الطالبات وتوزيعات المجموعات ثابتة
         const savedStateJson = localStorage.getItem('manalLessonState');
         let initialAttendance = rawStudents.map(fullName => ({ fullName, present: true, group: null }));
 
@@ -1169,7 +1176,6 @@
             try {
                 const parsed = JSON.parse(savedStateJson);
                 if (parsed.attendance && Array.isArray(parsed.attendance)) {
-                    // دمج البيانات المحفوظة مع القائمة لضمان عدم ضياع التوزيع
                     initialAttendance = rawStudents.map(fullName => {
                         const found = parsed.attendance.find(s => s.fullName === fullName);
                         return found ? found : { fullName, present: true, group: null };
@@ -1183,7 +1189,6 @@
             scores: [0, 0, 0],
             attendance: initialAttendance
         };
-        // تحديث الحضور بالمصفوفة الآمنة
         window.state.attendance = initialAttendance;
 
         function saveStateToStorage() {
@@ -1481,7 +1486,6 @@
             onValue(stateRef, (snapshot) => {
                 const data = snapshot.val();
                 if (data && data.attendance) {
-                    // دمج البيانات المستلمة من فايربيس لتثبيت الطالبات وعدم اختفائهن
                     window.state = data;
                     if (window.renderUIFromState) window.renderUIFromState();
                 }
