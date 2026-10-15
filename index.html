@@ -1133,15 +1133,19 @@
     <!-- Vanilla Standalone Script Engine & Persistent LocalStorage -->
     <script>
         const rawStudents = [
-            "Tala Bint Ibrahim Al-Marhabi", "Tala Abdullah Al-Shahrani", "Jawana Bint Abdullah Al-Shahrani",
-            "Jawaher Bint Mohammed Al-Aklabi", "Hoor Nasser Al-Shahrani", "Danah Bint Mohammed Al-Alyan",
-            "Dina Miteb Al-Shahrani", "Ratel Bint Amer Al-Shahrani", "Rowan Ayed", "Salha Ali Al-Shahrani",
-            "Fatima Bint Rabean Al-Maawi", "Lien Bint Saeed Al-Shahrani", "Nihal Ajab Al-Shahrani",
-            "Haya Bint Mohammed Al-Maawi", "Wad Masoud Al-Shahrani", "Wasan Mubarak Al-Shahrani"
+            "تالا عبدالله", "حور", "رتيل", "دينا", "فاطمة",
+            "جوانا", "تالا إبراهيم", "نيهال", "جواهر", "صالحه", "ود",
+            "هياء", "روان", "وسن", "لين", "دانة"
         ];
 
         const savedStateJson = localStorage.getItem('manalLessonState');
-        let initialAttendance = rawStudents.map(fullName => ({ fullName, present: true, group: null }));
+        let initialAttendance = rawStudents.map(fullName => {
+            let assignedGroup = null;
+            if (["تالا عبدالله", "حور", "رتيل", "دينا", "فاطمة"].includes(fullName)) assignedGroup = "Princesses";
+            else if (["جوانا", "تالا إبراهيم", "نيهال", "جواهر", "صالحه", "ود"].includes(fullName)) assignedGroup = "Butterflies";
+            else if (["هياء", "روان", "وسن", "لين", "دانة"].includes(fullName)) assignedGroup = "Queens";
+            return { fullName, present: true, group: assignedGroup };
+        });
 
         if (savedStateJson) {
             try {
@@ -1149,7 +1153,12 @@
                 if (parsed.attendance && Array.isArray(parsed.attendance)) {
                     initialAttendance = rawStudents.map(fullName => {
                         const found = parsed.attendance.find(s => s.fullName === fullName);
-                        return found ? found : { fullName, present: true, group: null };
+                        if (found) return found;
+                        let assignedGroup = null;
+                        if (["تالا عبدالله", "حور", "رتيل", "دينا", "فاطمة"].includes(fullName)) assignedGroup = "Princesses";
+                        else if (["جوانا", "تالا إبراهيم", "نيهال", "جواهر", "صالحه", "ود"].includes(fullName)) assignedGroup = "Butterflies";
+                        else if (["هياء", "روان", "وسن", "لين", "دانة"].includes(fullName)) assignedGroup = "Queens";
+                        return { fullName, present: true, group: assignedGroup };
                     });
                 }
             } catch(e) {}
