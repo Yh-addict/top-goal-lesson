@@ -1133,32 +1133,34 @@
     <!-- Vanilla Standalone Script Engine & Persistent LocalStorage -->
     <script>
         const rawStudents = [
-            "تالا عبدالله", "حور", "رتيل", "دينا", "فاطمة",
-            "جوانا", "تالا إبراهيم", "نيهال", "جواهر", "صالحه", "ود",
-            "هياء", "روان", "وسن", "لين", "دانة"
+            { fullName: "Tala Abdullah Al-Shahrani", group: "Princesses" },
+            { fullName: "Hoor Nasser Al-Shahrani", group: "Princesses" },
+            { fullName: "Ratel Bint Amer Al-Shahrani", group: "Princesses" },
+            { fullName: "Dina Miteb Al-Shahrani", group: "Princesses" },
+            { fullName: "Fatima Bint Rabean Al-Maawi", group: "Princesses" },
+            { fullName: "Jawana Bint Abdullah Al-Shahrani", group: "Butterflies" },
+            { fullName: "Tala Bint Ibrahim Al-Marhabi", group: "Butterflies" },
+            { fullName: "Nihal Ajab Al-Shahrani", group: "Butterflies" },
+            { fullName: "Jawaher Bint Mohammed Al-Aklabi", group: "Butterflies" },
+            { fullName: "Salha Ali Al-Shahrani", group: "Butterflies" },
+            { fullName: "Wad Masoud Al-Shahrani", group: "Butterflies" },
+            { fullName: "Haya Bint Mohammed Al-Maawi", group: "Queens" },
+            { fullName: "Rowan Ayed", group: "Queens" },
+            { fullName: "Wasan Mubarak Al-Shahrani", group: "Queens" },
+            { fullName: "Lien Bint Saeed Al-Shahrani", group: "Queens" },
+            { fullName: "Danah Bint Mohammed Al-Alyan", group: "Queens" }
         ];
 
         const savedStateJson = localStorage.getItem('manalLessonState');
-        let initialAttendance = rawStudents.map(fullName => {
-            let assignedGroup = null;
-            if (["تالا عبدالله", "حور", "رتيل", "دينا", "فاطمة"].includes(fullName)) assignedGroup = "Princesses";
-            else if (["جوانا", "تالا إبراهيم", "نيهال", "جواهر", "صالحه", "ود"].includes(fullName)) assignedGroup = "Butterflies";
-            else if (["هياء", "روان", "وسن", "لين", "دانة"].includes(fullName)) assignedGroup = "Queens";
-            return { fullName, present: true, group: assignedGroup };
-        });
+        let initialAttendance = rawStudents.map(s => ({ fullName: s.fullName, present: true, group: s.group }));
 
         if (savedStateJson) {
             try {
                 const parsed = JSON.parse(savedStateJson);
                 if (parsed.attendance && Array.isArray(parsed.attendance)) {
-                    initialAttendance = rawStudents.map(fullName => {
-                        const found = parsed.attendance.find(s => s.fullName === fullName);
-                        if (found) return found;
-                        let assignedGroup = null;
-                        if (["تالا عبدالله", "حور", "رتيل", "دينا", "فاطمة"].includes(fullName)) assignedGroup = "Princesses";
-                        else if (["جوانا", "تالا إبراهيم", "نيهال", "جواهر", "صالحه", "ود"].includes(fullName)) assignedGroup = "Butterflies";
-                        else if (["هياء", "روان", "وسن", "لين", "دانة"].includes(fullName)) assignedGroup = "Queens";
-                        return { fullName, present: true, group: assignedGroup };
+                    initialAttendance = rawStudents.map(raw => {
+                        const found = parsed.attendance.find(s => s.fullName === raw.fullName);
+                        return found ? found : { fullName: raw.fullName, present: true, group: raw.group };
                     });
                 }
             } catch(e) {}
@@ -1169,7 +1171,11 @@
             scores: [0, 0, 0],
             attendance: initialAttendance
         };
-        window.state.attendance = initialAttendance;
+        // Ensure groups are explicitly mapped correctly even if loaded from old localStorage
+        window.state.attendance = rawStudents.map(raw => {
+            const existing = window.state.attendance.find(s => s.fullName === raw.fullName);
+            return existing ? { ...existing, group: raw.group } : { fullName: raw.fullName, present: true, group: raw.group };
+        });
 
         function saveStateToStorage() {
             localStorage.setItem('manalLessonState', JSON.stringify(window.state));
