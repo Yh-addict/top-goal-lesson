@@ -1151,27 +1151,36 @@
             { fullName: "Danah Bint Mohammed Al-Alyan", group: "Queens" }
         ];
 
-        const savedStateJson = localStorage.getItem('manalLessonState');
+        const STORAGE_VERSION = "v3_fixed_groups";
+        const currentVersion = localStorage.getItem('manalLessonVersion');
+
         let initialAttendance = rawStudents.map(s => ({ fullName: s.fullName, present: true, group: s.group }));
 
-        if (savedStateJson) {
-            try {
-                const parsed = JSON.parse(savedStateJson);
-                if (parsed.attendance && Array.isArray(parsed.attendance)) {
-                    initialAttendance = rawStudents.map(raw => {
-                        const found = parsed.attendance.find(s => s.fullName === raw.fullName);
-                        return found ? found : { fullName: raw.fullName, present: true, group: raw.group };
-                    });
-                }
-            } catch(e) {}
+        if (currentVersion === STORAGE_VERSION) {
+            const savedStateJson = localStorage.getItem('manalLessonState');
+            if (savedStateJson) {
+                try {
+                    const parsed = JSON.parse(savedStateJson);
+                    if (parsed.attendance && Array.isArray(parsed.attendance)) {
+                        initialAttendance = rawStudents.map(raw => {
+                            const found = parsed.attendance.find(s => s.fullName === raw.fullName);
+                            return found ? found : { fullName: raw.fullName, present: true, group: raw.group };
+                        });
+                    }
+                } catch(e) {}
+            }
+        } else {
+            localStorage.setItem('manalLessonVersion', STORAGE_VERSION);
+            localStorage.removeItem('manalLessonState');
         }
 
-        window.state = savedStateJson ? JSON.parse(savedStateJson) : {
+        window.state = {
             currentStage: 0,
             scores: [0, 0, 0],
             attendance: initialAttendance
         };
-        // Ensure groups are explicitly mapped correctly even if loaded from old localStorage
+
+        // Force overwrite group assignments from hardcoded list to fix old cached states
         window.state.attendance = rawStudents.map(raw => {
             const existing = window.state.attendance.find(s => s.fullName === raw.fullName);
             return existing ? { ...existing, group: raw.group } : { fullName: raw.fullName, present: true, group: raw.group };
@@ -1440,9 +1449,6 @@
             playAudioEffect('happy');
         };
 
-        document.addEventListener("DOMContentLoaded", () => {
-            window.renderUIFromState();
-        });
     </script>
 
     <!-- Async Background Firebase Module -->
@@ -1472,12 +1478,21 @@
             onValue(stateRef, (snapshot) => {
                 const data = snapshot.val();
                 if (data && data.attendance) {
+                    // دمج البيانات مع الحفاظ على المجموعات الجديدة لضمان عدم حدوث تعارض مع فايبربيس
+                    rawStudents.forEach(raw => {
+                        const target = data.attendance.find(s => s.fullName === raw.fullName);
+                        if (target) target.group = raw.group;
+                    });
                     window.state = data;
                     if (window.renderUIFromState) window.renderUIFromState();
                 }
             });
+            
+            // تحديث العرض الأولي فور التحميل
+            if (window.renderUIFromState) window.renderUIFromState();
         } catch (e) {
             console.log("Firebase Init Bypass:", e);
+            if (window.renderUIFromState) window.renderUIFromState();
         }
     </script>
 </body>
